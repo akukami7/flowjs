@@ -61,12 +61,12 @@ jobs:
           path: docs-site/.vitepress/dist
 
   deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
