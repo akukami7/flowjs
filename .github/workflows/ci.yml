@@ -15,15 +15,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
-          version: 8
+          # Project requires pnpm >= 9 (engines.pnpm)
+          version: 9.15.5
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'pnpm'
+
+      - name: Show versions
+        run: node -v && pnpm -v
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

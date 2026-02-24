@@ -22,24 +22,29 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Required for accurate lastUpdated timestamps
-          
+
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
-          version: 8
+          # Project requires pnpm >= 9 (engines.pnpm)
+          version: 9.15.5
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          # Match your CI Node (and avoid surprises with Vite/VitePress)
+          node-version: 20
           cache: 'pnpm'
 
+      - name: Show versions
+        run: node -v && pnpm -v
+
       - name: Install Monorepo Dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build VitePress
-        run: pnpm run docs:build
         working-directory: docs-site
+        run: pnpm run docs:build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
