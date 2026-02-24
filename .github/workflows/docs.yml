@@ -29,9 +29,10 @@ jobs:
           node-version: 20
           cache: "pnpm"
 
-      # ✅ используем pnpm из package.json
-      - name: Enable Corepack (use packageManager from package.json)
-        run: corepack enable
+      - name: Enable Corepack and activate pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.15.5 --activate
 
       - name: Show versions
         run: node -v && pnpm -v

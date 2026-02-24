@@ -2,9 +2,9 @@ name: FlowJS CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-and-test:
@@ -18,11 +18,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
-      # Corepack is available on Node 20 runners; this pins pnpm to a known-good version
-      - name: Use pnpm 9
-        run: corepack prepare pnpm@9.15.5 --activate
+      - name: Enable Corepack and activate pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.15.5 --activate
 
       - name: Show versions
         run: |
@@ -51,13 +52,8 @@ jobs:
       - name: Smoke Test Example App
         working-directory: ./examples/basic
         run: |
-          # Start the production server in the background
           pnpm run start &
-          # Wait a few seconds for Node/HTTP to bind
           sleep 5
-          # Send a GET request to verify SSR works (exit 1 if failed)
           curl -f http://localhost:3000 || exit 1
-          # Send a GET request to verify an API route works
           curl -f http://localhost:3000/api/hello || exit 1
-          # Kill the background server
           kill %1
