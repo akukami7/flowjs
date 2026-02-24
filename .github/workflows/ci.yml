@@ -20,14 +20,14 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Enable Corepack
-        run: corepack enable
-
+      # Corepack is available on Node 20 runners; this pins pnpm to a known-good version
       - name: Use pnpm 9
         run: corepack prepare pnpm@9.15.5 --activate
 
       - name: Show versions
-        run: node -v && pnpm -v && which pnpm
+        run: |
+          node -v
+          pnpm -v
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
