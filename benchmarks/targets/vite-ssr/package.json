@@ -1,0 +1,21 @@
+{
+    "name": "vite-ssr-benchmark",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "node server.js",
+        "build": "vite build --outDir dist/client && vite build --ssr src/entry-server.jsx --outDir dist/server",
+        "start": "cross-env NODE_ENV=production node server.js"
+    },
+    "dependencies": {
+        "compression": "^1.7.4",
+        "cross-env": "^7.0.3",
+        "express": "^4.19.2",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^4.3.1",
+        "vite": "^5.3.1"
+    }
+}

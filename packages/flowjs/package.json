@@ -1,0 +1,70 @@
+{
+    "name": "flowjs",
+    "version": "0.1.0",
+    "description": "FlowJS — modern full-stack React framework powered by Vite",
+    "type": "module",
+    "bin": {
+        "flowjs": "./dist/cli.js"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        },
+        "./client": {
+            "types": "./dist/client/index.d.ts",
+            "import": "./dist/client/index.js",
+            "require": "./dist/client/index.cjs"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@flowjs/build": "workspace:*",
+        "@flowjs/router": "workspace:*",
+        "@flowjs/server": "workspace:*"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4",
+        "tsup": "^8.4.0",
+        "typescript": "^5.7.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akukami7/flowjs.git",
+        "directory": "packages/flowjs"
+    },
+    "homepage": "https://github.com/akukami7/flowjs#readme",
+    "bugs": "https://github.com/akukami7/flowjs/issues",
+    "keywords": [
+        "flowjs",
+        "react",
+        "framework",
+        "fullstack",
+        "ssr",
+        "vite",
+        "file-routing"
+    ],
+    "license": "MIT"
+}

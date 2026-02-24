@@ -1,0 +1,1 @@
+import{j as e}from"./client-entry-BoBmGNAV.js";async function o(){return{title:"Welcome to FlowJS"}}function r({data:t}){return e.jsxs("div",{children:[e.jsx("h1",{children:t?.title||"Home"}),e.jsx("p",{children:"SSR and Data Hydration working!"})]})}export{r as default,o as loader};

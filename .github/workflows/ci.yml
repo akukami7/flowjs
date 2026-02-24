@@ -1,0 +1,59 @@
+name: FlowJS CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Typecheck
+        run: pnpm run typecheck
+
+      - name: Run Lint
+        run: pnpm run lint --if-present
+
+      - name: Run Tests
+        run: pnpm run test --if-present
+
+      - name: Build Framework Packages
+        run: pnpm run build
+
+      - name: Build Example App
+        working-directory: ./examples/basic
+        run: pnpm run build
+
+      - name: Smoke Test Example App
+        working-directory: ./examples/basic
+        run: |
+          # Start the production server in the background
+          pnpm run start &
+          # Wait a few seconds for Node/HTTP to bind
+          sleep 5
+          # Send a GET request to verify SSR works (exit 1 if failed)
+          curl -f http://localhost:3000 || exit 1
+          # Send a GET request to verify an API route works
+          curl -f http://localhost:3000/api/hello || exit 1
+          # Kill the background server
+          kill %1

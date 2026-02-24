@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "jsx": "react-jsx",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "allowJs": true,
+        "baseUrl": ".",
+        "paths": {
+            "~/*": [
+                "./*"
+            ]
+        }
+    },
+    "include": [
+        "app/**/*",
+        "src/**/*",
+        "middleware.ts",
+        "flow-env.d.ts"
+    ]
+}

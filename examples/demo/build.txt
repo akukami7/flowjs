@@ -1,0 +1,198 @@
+﻿
+> example-demo@0.0.0 build D:\flowjs\examples\demo
+> flowjs build
+
+тЦ╢я╕П  flowjs build тАФ compiling for production...
+ЁЯФН Scanning app directory...
+ЁЯУж Building client bundle...
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mтЬУ[39m 36 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/client/[22m[32m.vite/manifest.json              [39m[1m[2m  2.27 kB[22m[1m[22m[2m тФВ gzip:  0.41 kB[22m
+[2mdist/client/[22m[36massets/index-BixdW8TK.js         [39m[1m[2m  0.12 kB[22m[1m[22m[2m тФВ gzip:  0.09 kB[22m
+[2mdist/client/[22m[36massets/api-0EaRnJ1f.js           [39m[1m[2m  0.34 kB[22m[1m[22m[2m тФВ gzip:  0.27 kB[22m
+[2mdist/client/[22m[36massets/layout-BJ1HT11l.js        [39m[1m[2m  0.42 kB[22m[1m[22m[2m тФВ gzip:  0.30 kB[22m
+[2mdist/client/[22m[36massets/page-CNdFdyF4.js          [39m[1m[2m  0.45 kB[22m[1m[22m[2m тФВ gzip:  0.32 kB[22m
+[2mdist/client/[22m[36massets/page-BDavDPJV.js          [39m[1m[2m  0.49 kB[22m[1m[22m[2m тФВ gzip:  0.30 kB[22m
+[2mdist/client/[22m[36massets/layout-Dc6N2o-0.js        [39m[1m[2m  0.63 kB[22m[1m[22m[2m тФВ gzip:  0.35 kB[22m
+[2mdist/client/[22m[36massets/page-DwqgbO8V.js          [39m[1m[2m  0.63 kB[22m[1m[22m[2m тФВ gzip:  0.42 kB[22m
+[2mdist/client/[22m[36massets/page-C3KFLSoR.js          [39m[1m[2m  0.78 kB[22m[1m[22m[2m тФВ gzip:  0.52 kB[22m
+[2mdist/client/[22m[36massets/client-entry-6o54u498.js  [39m[1m[2m196.40 kB[22m[1m[22m[2m тФВ gzip: 61.94 kB[22m
+[32mтЬУ built in 691ms[39m
+ЁЯУж Building server bundle...
+[36mvite v7.3.1 [32mbuilding ssr environment for production...[36m[39m
+transforming...
+[32mтЬУ[39m 9 modules transformed.
+node.exe : 
+[31mтЬЧ[39m Build 
+failed in 15ms
+C:\Users\teeoo\AppData\
+Roaming\npm\pnpm.ps1:24
+ знак:5
++     & "node$exe"  "$b
+asedir/node_modules/pnp
+m/bin/pnpm.cjs" $args
++     ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: ([31mтЬЧ[39m   
+  Build failed in 1    
+5ms:String) [], Re    
+moteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+тЭМ Command failed: [3
+1m.flowjs/server-entry.
+tsx (2:9): 
+"middleware" is not 
+exported by 
+"src/middleware.ts", 
+imported by ".flowjs/se
+rver-entry.tsx".[39m
+file: [36mD:/flowjs/ex
+amples/demo/.flowjs/ser
+ver-entry.tsx:2:9[39m
+[33m
+1: 
+2: import { middleware 
+as _mw } from 
+"../src/middleware.ts";
+            ^
+3: export const 
+middleware = _mw;
+[39m
+    at getRollupError (
+file:///D:/flowjs/node_
+modules/.pnpm/rollup@4.
+59.0/node_modules/rollu
+p/dist/es/shared/parseA
+st.js:402:41)
+    at error (file:///D
+:/flowjs/node_modules/.
+pnpm/rollup@4.59.0/node
+_modules/rollup/dist/es
+/shared/parseAst.js:398
+:42)
+    at Module.error (fi
+le:///D:/flowjs/node_mo
+dules/.pnpm/rollup@4.59
+.0/node_modules/rollup/
+dist/es/shared/node-ent
+ry.js:17040:16)
+    at 
+Module.traceVariable (f
+ile:///D:/flowjs/node_m
+odules/.pnpm/rollup@4.5
+9.0/node_modules/rollup
+/dist/es/shared/node-en
+try.js:17452:29)
+    at ModuleScope.find
+Variable (file:///D:/fl
+owjs/node_modules/.pnpm
+/rollup@4.59.0/node_mod
+ules/rollup/dist/es/sha
+red/node-entry.js:15070
+:39)
+    at Identifier.bind 
+(file:///D:/flowjs/node
+_modules/.pnpm/rollup@4
+.59.0/node_modules/roll
+up/dist/es/shared/node-
+entry.js:5447:40)
+    at VariableDeclarat
+or.bind (file:///D:/flo
+wjs/node_modules/.pnpm/
+rollup@4.59.0/node_modu
+les/rollup/dist/es/shar
+ed/node-entry.js:2829:2
+3)
+    at VariableDeclarat
+ion.bind (file:///D:/fl
+owjs/node_modules/.pnpm
+/rollup@4.59.0/node_mod
+ules/rollup/dist/es/sha
+red/node-entry.js:2825:
+28)
+    at ExportNamedDecla
+ration.bind (file:///D:
+/flowjs/node_modules/.p
+npm/rollup@4.59.0/node_
+modules/rollup/dist/es/
+shared/node-entry.js:12
+702:27)
+    at Program.bind (fi
+le:///D:/flowjs/node_mo
+dules/.pnpm/rollup@4.59
+.0/node_modules/rollup/
+dist/es/shared/node-ent
+ry.js:2825:28) {
+  binding: 
+'middleware',
+  code: 
+'MISSING_EXPORT',
+  exporter: 'D:/flowjs/
+examples/demo/src/middl
+eware.ts',
+  id: 'D:/flowjs/exampl
+es/demo/.flowjs/server-
+entry.tsx',
+  url: 'https://rollupj
+s.org/troubleshooting/#
+error-name-is-not-expor
+ted-by-module',
+  pos: 9,
+  loc: {
+    column: 9,
+    file: 'D:/flowjs/ex
+amples/demo/.flowjs/ser
+ver-entry.tsx',
+    line: 2
+  },
+  frame: '1: \n' +
+    '2: import { 
+middleware as _mw } 
+from "../src/middleware
+.ts";\n' +
+    '            ^\n' +
+    '3: export const 
+middleware = _mw;',
+  watchFiles: [
+    'D:\\flowjs\\exampl
+es\\demo\\package.json'
+,
+    'D:/flowjs/examples
+/demo/.flowjs/server-en
+try.tsx',
+    'D:/flowjs/examples
+/demo/app/page.tsx',
+    'D:/flowjs/examples
+/demo/src/middleware.ts
+',
+    'D:/flowjs/examples
+/demo/app/(dashboard)/l
+ayout.tsx',
+    'D:/flowjs/examples
+/demo/app/layout.tsx',
+    'D:/flowjs/examples
+/demo/app/(dashboard)/d
+ashboard/page.tsx',
+    'D:/flowjs/examples
+/demo/app/api/posts/api
+.ts',
+    'D:/flowjs/examples
+/demo/app/blog/page.tsx
+',
+    'D:/flowjs/examples
+/demo/app/blog/[slug]/p
+age.tsx'
+  ],
+  Symbol(augmented): 
+true
+}
+тАЙELIFECYCLEтАЙ Command failed with exit code 1.

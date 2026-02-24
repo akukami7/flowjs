@@ -1,0 +1,48 @@
+{
+    "name": "@flowjs/build",
+    "version": "0.1.0",
+    "description": "FlowJS Vite build pipeline",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@flowjs/router": "workspace:^",
+        "@flowjs/server": "workspace:*",
+        "@vitejs/plugin-react": "^5.1.4"
+    },
+    "peerDependencies": {
+        "vite": "^6.0.0 || ^7.0.0"
+    },
+    "devDependencies": {
+        "vite": "^7.3.1",
+        "tsup": "^8.4.0",
+        "typescript": "^5.7.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akukami7/flowjs.git",
+        "directory": "packages/build"
+    },
+    "homepage": "https://github.com/akukami7/flowjs#readme",
+    "bugs": "https://github.com/akukami7/flowjs/issues",
+    "license": "MIT"
+}

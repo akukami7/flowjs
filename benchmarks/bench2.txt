@@ -1,0 +1,40 @@
+
+=====================================
+Starting Benchmark: FlowJS
+=====================================
+
+Installing dependencies...
+Building project...
+✅ Build Time: 1.69s
+📦 Output Size: 0.21 MB (dist/)
+Booting Production Server...
+(node:12832) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+❌ Benchmark failed for FlowJS:
+Timed out waiting for: http-get://127.0.0.1:3000
+
+=====================================
+Starting Benchmark: Next.js
+=====================================
+
+Installing dependencies...
+Building project...
+✅ Build Time: 6.01s
+📦 Output Size: 5.33 MB (.next/)
+Booting Production Server...
+❌ Benchmark failed for Next.js:
+Timed out waiting for: http-get://127.0.0.1:3000
+
+=====================================
+Starting Benchmark: Vite SSR
+=====================================
+
+Installing dependencies...
+Building project...
+✅ Build Time: 1.63s
+📦 Output Size: 0.14 MB (dist/)
+Booting Production Server...
+❌ Benchmark failed for Vite SSR:
+Timed out waiting for: http-get://127.0.0.1:3000
+
+❌ No targets were evaluated. Make sure folders exist in targets/

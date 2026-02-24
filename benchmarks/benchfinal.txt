@@ -1,0 +1,65 @@
+
+=====================================
+Starting Benchmark: FlowJS
+=====================================
+
+Dependencies resolved via Workspace...
+Building project...
+✅ Build Time: 1.57s
+📦 Output Size: 0.21 MB (dist/)
+Booting Production Server...
+🔥 Cold Start Latency: 1029ms
+
+Running Autocannon (10s | 100 connections)...
+🚀 Req/Sec: 3580
+⏱️  p50 Latency: 27 ms
+⏱️  p95 Latency: 35 ms
+Server stderr: (node:6272) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/flowjs/benchmarks/targets/flowjs-app/dist/server/server-entry.js is not specified and it doesn't parse as CommonJS.
+Repars
+
+=====================================
+Starting Benchmark: Next.js
+=====================================
+
+Dependencies resolved via Workspace...
+Building project...
+✅ Build Time: 6.06s
+📦 Output Size: 5.33 MB (.next/)
+Booting Production Server...
+🔥 Cold Start Latency: 769ms
+
+Running Autocannon (10s | 100 connections)...
+🚀 Req/Sec: 560
+⏱️  p50 Latency: 167 ms
+⏱️  p95 Latency: 219 ms
+
+=====================================
+Starting Benchmark: Vite SSR
+=====================================
+
+Dependencies resolved via Workspace...
+Building project...
+✅ Build Time: 1.73s
+📦 Output Size: 0.14 MB (dist/)
+Booting Production Server...
+🔥 Cold Start Latency: 789ms
+
+Running Autocannon (10s | 100 connections)...
+🚀 Req/Sec: 27
+⏱️  p50 Latency: 20 ms
+⏱️  p95 Latency: 41 ms
+
+
+=============================================
+              FINAL RESULTS                   
+=============================================
+
+┌──────────┬────────────┬─────────────┬────────────┬─────────┬─────────────┬─────────────┐
+│ (index)  │ Build Time │ Output Size │ Cold Start │ Req/Sec │ p50 Latency │ p95 Latency │
+├──────────┼────────────┼─────────────┼────────────┼─────────┼─────────────┼─────────────┤
+│ FlowJS   │ '1.57s'    │ '0.21 MB'   │ '1029ms'   │ '3580'  │ '27 ms'     │ '35 ms'     │
+│ Next.js  │ '6.06s'    │ '5.33 MB'   │ '769ms'    │ '560'   │ '167 ms'    │ '219 ms'    │
+│ Vite SSR │ '1.73s'    │ '0.14 MB'   │ '789ms'    │ '27'    │ '20 ms'     │ '41 ms'     │
+└──────────┴────────────┴─────────────┴────────────┴─────────┴─────────────┴─────────────┘
+
+Copy the table above into your markdown report!

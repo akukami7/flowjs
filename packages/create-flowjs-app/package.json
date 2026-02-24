@@ -1,0 +1,40 @@
+{
+    "name": "create-flowjs-app",
+    "version": "0.1.0",
+    "description": "Scaffolding tool for FlowJS applications",
+    "type": "module",
+    "bin": {
+        "create-flowjs-app": "./index.js"
+    },
+    "files": [
+        "index.js",
+        "templates"
+    ],
+    "dependencies": {
+        "prompts": "^2.4.2",
+        "kleur": "^4.1.5",
+        "mri": "^1.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "@types/prompts": "^2.4.9"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akukami7/flowjs.git",
+        "directory": "packages/create-flowjs-app"
+    },
+    "homepage": "https://github.com/akukami7/flowjs#readme",
+    "bugs": "https://github.com/akukami7/flowjs/issues",
+    "keywords": [
+        "create",
+        "flowjs",
+        "scaffold",
+        "react",
+        "vite"
+    ],
+    "license": "MIT"
+}

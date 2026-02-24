@@ -1,0 +1,41 @@
+{
+    "name": "@flowjs/router",
+    "version": "0.1.0",
+    "description": "FlowJS file-system based router",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "typecheck": "tsc --noEmit",
+        "test": "tsx --test src/__tests__/*.test.ts"
+    },
+    "devDependencies": {
+        "typescript": "^5.7.0",
+        "tsup": "^8.4.0",
+        "@types/node": "^22.0.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akukami7/flowjs.git",
+        "directory": "packages/router"
+    },
+    "homepage": "https://github.com/akukami7/flowjs#readme",
+    "bugs": "https://github.com/akukami7/flowjs/issues",
+    "license": "MIT"
+}

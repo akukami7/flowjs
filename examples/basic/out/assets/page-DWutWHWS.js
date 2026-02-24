@@ -1,0 +1,1 @@
+import{a as e}from"./index-D3FyfgZ7.js";import{r as o}from"./client-entry-BoBmGNAV.js";import"fs";import"path";const i=e({default:function({params:t}){return o.createElement("h1",null,`Blog Post: ${t.slug}`)},config:{dynamic:"force-static"},generateStaticParams:()=>[{slug:"hello-world"},{slug:"flowjs-v1"}]});export{i as default};

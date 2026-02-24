@@ -1,0 +1,8 @@
+
+=====================================
+Starting Benchmark: FlowJS
+=====================================
+
+Installing dependencies...
+Building project...
+^C

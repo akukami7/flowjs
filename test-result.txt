@@ -1,0 +1,15 @@
+=== ROUTES ===
+/ | layouts=[/]
+/dashboard | layouts=[/]
+/settings | layouts=[/]
+/about | layouts=[/]
+/blog | layouts=[/]
+/blog/[slug] | layouts=[/]
+/docs/[...path] | layouts=[/]
+
+=== MATCHES ===
+/ -> / layouts: ["/"]
+/dashboard -> /dashboard layouts: ["/"]
+/settings -> /settings layouts: ["/"]
+/blog/hello -> /blog/[slug] layouts: ["/"]
+/docs/a/b/c -> /docs/[...path] layouts: ["/"]

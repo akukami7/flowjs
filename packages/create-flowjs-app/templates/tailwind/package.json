@@ -1,0 +1,25 @@
+{
+    "name": "template-basic",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "flowjs dev",
+        "build": "flowjs build",
+        "start": "flowjs start",
+        "export": "flowjs export"
+    },
+    "dependencies": {
+        "flowjs": "latest",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "autoprefixer": "^10.4.19",
+        "postcss": "^8.4.38",
+        "tailwindcss": "^3.4.4",
+        "typescript": "^5.7.0"
+    }
+}
