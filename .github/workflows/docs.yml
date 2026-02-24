@@ -41,8 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Убедитесь, что эта папка совпадает с той, куда собирается ваша документация
-          path: './docs/dist'
+          path: './docs-site/.vitepress/dist'
 
   deploy-docs:
     if: github.event_name == 'push'
