@@ -132,8 +132,16 @@ export async function createProdServer(options: { root: string; port: number }) 
                             url: url
                         });
 
-                        res.writeHead(nextRes.status, Object.fromEntries(nextRes.headers.entries()));
-                        res.end(await nextRes.text());
+                        if (nextRes instanceof Response) {
+                            res.statusCode = nextRes.status;
+                            nextRes.headers.forEach((v, k) => res.setHeader(k, v));
+                            const text = await nextRes.text();
+                            res.end(text);
+                        } else {
+                            res.statusCode = 200;
+                            res.setHeader("Content-Type", "application/json");
+                            res.end(JSON.stringify(nextRes));
+                        }
                         return;
                     }
                 }
