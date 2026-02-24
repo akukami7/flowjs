@@ -117,18 +117,19 @@ export async function createProdServer(options: { root: string; port: number }) 
                 if (compileMeta.clientChunkPath === "") {
                     // It's an API route!
                     const apiMod = await routeModules.page();
-                    let handler = apiMod.default;
-                    if (req.method && apiMod[req.method]) {
-                        handler = apiMod[req.method];
-                    }
+                    const handlers = apiMod.default || apiMod;
+                    const method = req.method?.toUpperCase() || "GET";
 
-                    if (typeof handler === "function") {
+                    if (handlers[method] && typeof handlers[method] === "function") {
+                        const handler = handlers[method];
                         const nextRes = await handler({
                             request: new Request(url.href, {
                                 method: req.method,
                                 headers: req.headers as HeadersInit
                             }),
-                            params: match.params
+                            params: match.params,
+                            query: Object.fromEntries(url.searchParams.entries()),
+                            url: url
                         });
 
                         res.writeHead(nextRes.status, Object.fromEntries(nextRes.headers.entries()));
