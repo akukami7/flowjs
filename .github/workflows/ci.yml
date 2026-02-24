@@ -47,7 +47,7 @@ jobs:
 
       - name: Build Example App
         working-directory: ./examples/basic
-        run: pnpm run build
+        run: node ../../packages/flowjs/dist/cli.js build
 
       - name: Smoke Test Example App
         working-directory: ./examples/basic
