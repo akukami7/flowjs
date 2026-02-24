@@ -1,6 +1,7 @@
 {
   "name": "flowjs-basic-app",
   "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "flowjs dev",
     "build": "flowjs build",
