@@ -11,7 +11,7 @@ hero:
       link: /routing
     - theme: alt
       text: View on GitHub
-      link: https://github.com/your-org/flowjs
+      link: https://github.com/akukami7/flowjs
 
 features:
   - title: File-System Routing
