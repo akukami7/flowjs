@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm -r build",
+    "build": "pnpm --filter \"./packages/**\" build",
     "dev": "pnpm --filter flowjs dev",
     "clean": "pnpm -r exec rm -rf dist",
     "typecheck": "pnpm -r typecheck",
