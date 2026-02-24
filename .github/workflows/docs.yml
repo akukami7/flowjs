@@ -23,15 +23,15 @@ jobs:
         with:
           fetch-depth: 0 # Required for accurate lastUpdated timestamps
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          # Match your CI Node (and avoid surprises with Vite/VitePress)
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
+
+      # ✅ используем pnpm из package.json
+      - name: Enable Corepack (use packageManager from package.json)
+        run: corepack enable
 
       - name: Show versions
         run: node -v && pnpm -v
