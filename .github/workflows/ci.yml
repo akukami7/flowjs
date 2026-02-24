@@ -55,5 +55,5 @@ jobs:
           node ../../packages/flowjs/dist/cli.js start &
           sleep 5
           curl -f http://localhost:3000 || exit 1
-          curl -f http://localhost:3000/api/hello || exit 1
+          curl -f http://localhost:3000/api/users || exit 1
           kill %1
