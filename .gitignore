@@ -1,6 +1,12 @@
 node_modules/
 dist/
+out/
+.flowjs/
 *.tsbuildinfo
 .turbo/
 .DS_Store
 *.log
+.env
+.env.*
+test-result.txt
+*.tgz

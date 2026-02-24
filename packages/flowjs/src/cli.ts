@@ -1,5 +1,4 @@
 // @ts-nocheck
-// @ts-nocheck
 import { parseArgs } from "node:util";
 
 const args = process.argv.slice(2);

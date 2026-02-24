@@ -3,11 +3,8 @@ name: Docs CI
 on:
   push:
     branches: ["main"]
-    # Можно запускать деплой только если изменения были в папке с документацией
-    # paths:
-    #   - 'docs/**'
 
-# Даем права для деплоя на GitHub Pages (если используете)
+# Права для публикации на GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -21,11 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # pnpm автоматически прочитает версию из packageManager в package.json
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.5
 
+      # Настраиваем Node.js и включаем кэширование зависимостей
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -36,21 +33,18 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Documentation
-        # Замените на вашу реальную команду для сборки документации
         run: pnpm run docs:build 
 
-      # Следующие шаги нужны, если вы публикуете документацию на GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Укажите папку, куда собирается ваша документация (например, ./docs/.next, ./docs/dist или ./docs/build)
+          # Убедитесь, что эта папка совпадает с той, куда собирается ваша документация
           path: './docs/dist'
 
   deploy-docs:
-    # Деплоим только при пуше в main, но не в Pull Request
     if: github.event_name == 'push'
     environment:
       name: github-pages

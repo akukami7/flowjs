@@ -14,13 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 1. Устанавливаем pnpm ДО настройки Node.js
+      # pnpm автоматически прочитает версию из packageManager в package.json
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.5
 
-      # 2. Настраиваем Node.js (он автоматически подхватит pnpm для кэширования)
+      # Настраиваем Node.js и включаем кэширование зависимостей
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
